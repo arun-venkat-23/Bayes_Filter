@@ -33,17 +33,18 @@ Initially the prior knowledge of the robot being at a state (location in the wor
 
 #### Prediction 
 
-<p>Then we go ahead with the prediction which tells you the probability for the movement from previous posotion to your current position due to performance of an action. Here we predict the probability of moving to the consecutive state from the current state for the whole time step for all the given states given the robot does an action. The summation of the probabilities for each state is calculated and this gives you the possibility of being at the state at that particular time step irrespective of your start position. np.dot multiplies the elements of the array and sums it. This is defined as <br>
-`bel_bar = np.dot(belief_state, action_array)` bel_bar = np.dot(belief_state,action_array)
-  
+Then we go ahead with the prediction which tells you the probability for the movement from previous posotion to your current position due to performance of an action. Here we predict the probability of moving to the consecutive state from the current state for the whole time step for all the given states given the robot does an action. The summation of the probabilities for each state is calculated and this gives you the possibility of being at the state at that particular time step irrespective of your start position. np.dot multiplies the elements of the array and sums it. This is defined as `bel_bar = np.dot(belief_state, action_array)` 
+
 #### Measurement update/ internal belief
-<p>After knowing the probabilities of being at a particular state at a given timestep post making a move/action(Prediction), we multiply this probability with the measurement model(sensor model data) to end up at the internal belief of the robot being at a particular state at that given timestep. np.multiply function does element to element multiplication. This is defined as <br>
-`y = np.multiply(bel_bar, measurement_array [i])` y = np.multiply(bel_bar,measurement_array[j])
+
+After knowing the probabilities of being at a particular state at a given timestep post making a move/action(Prediction), we multiply this probability with the measurement model(sensor model data) to end up at the internal belief of the robot being at a particular state at that given timestep. np.multiply function does element to element multiplication. This is defined as `y = np.multiply(bel_bar, measurement_array [i])`
   
 #### Normalization 
+
 The normalization factor (norm_fact) is calculated by dividing the sum of beliefs. This is defined as `norm_fact = 1 / (np.sum(y))`
 
 #### Actual belief
+
 We multiply the internal belief with the normalization factor to get the probabilities within the range (<1). This is defined as `belief_state = norm_fact * y`
 
 ###### This actual belief gets updated for each timestep and the actual belief of current state would be used as the prior belief for the next consecutive state (i.e. during the transformation from the current to the next consecutive state).
