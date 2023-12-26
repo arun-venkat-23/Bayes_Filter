@@ -14,10 +14,10 @@ To estimate the probability of a robot being at a new state requires information
 The action model and the measurement model was defined in the scope of this program. The action model remains the same in the whole process whereas the prior state and the measurement model changes with each timestep. Action model and the measurement model was hardcoded for the boundary conditions (for the first and the last steps).
 
 #### Action model representation
-`P(X<sub>(i+1)</sub> | X<sub>i</sub> , u<sub>i</sub>)` assuming Markov property, where X is the position or state and u is the action (moving forward, staying at the same position, moving 1 step forward, moving 2 steps forward) 
+> P(X<sub>(i+1)</sub> | X<sub>i</sub> , u<sub>i</sub>) <br> assuming Markov property, where X is the position or state and u is the action (moving forward, staying at the same position, moving 1 step forward, moving 2 steps forward) 
 
 #### Measurement model representation
-`P(Z<sub>i</sub> | X<sub>i</sub>)` assuming Markov property, where Z is the measurement and X is the current position.
+>P(Z<sub>i</sub> | X<sub>i</sub>) <br> assuming Markov property, where Z is the measurement and X is the current position.
 
 ## Logic for ACTION_ARRAY code
 
