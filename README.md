@@ -17,7 +17,7 @@ The action model and the measurement model was defined in the scope of this prog
 > P(X<sub>(i+1)</sub> | X<sub>i</sub> , u<sub>i</sub>) <br> assuming Markov property, where X is the position or state and u is the action (moving forward, staying at the same position, moving 1 step forward, moving 2 steps forward) 
 
 #### Measurement model representation
->P(Z<sub>i</sub> | X<sub>i</sub>) <br> assuming Markov property, where Z is the measurement and X is the current position.
+> P(Z<sub>i</sub> | X<sub>i</sub>) <br> assuming Markov property, where Z is the measurement and X is the current position.
 
 #### Logic for ACTION_ARRAY code
 
